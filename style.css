@@ -1,0 +1,37 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 15px;
+    line-height: 1.5; /* space in between each line */
+    padding: 0; 
+    margin: 0;
+    background-color: white;
+}
+
+/* Global */
+.container{
+    width: 80%; 
+    margin: auto;
+    overflow: hidden; /* Cuts off any content that won't be shown and removes scrollbar */
+}
+
+/* Header */
+
+header h1{
+    text-align: center;
+}
+
+header{
+    margin-bottom: 15px;
+}
+
+/* Section */
+
+section .container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+section .container div{
+    text-align: center;
+    
+}
