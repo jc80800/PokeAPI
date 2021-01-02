@@ -7,12 +7,6 @@ body{
     background-color: white;
 }
 
-/* Global */
-.container{
-    width: 80%; 
-    margin: auto;
-    overflow: hidden; /* Cuts off any content that won't be shown and removes scrollbar */
-}
 
 /* Header */
 
@@ -26,12 +20,6 @@ header{
 
 /* Section */
 
-section .container{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-}
-
-section .container div{
-    text-align: center;
-    
+.cardTitleColor{
+    color: black;
 }
