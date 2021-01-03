@@ -1,5 +1,5 @@
 async function fetchPokemon(){
-    for(let i = 1; i < 151  ; i++){
+    for(let i = 1; i < 2; i++){
         await searchPokemon(i);
     }
 }
@@ -62,12 +62,17 @@ function createDiv(data, id){
 }
 
 
-function searchPokemon(id) {
+async function searchPokemon(id) {
     const BASE_URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    fetch(BASE_URL)
+    await fetch(BASE_URL)
         .then(res => res.json())
-        .then(data => createDiv(data, id));
+        .then(data => createDiv(data, id))
+        .catch(error => console.log("Error"));
 }
 
-fetchPokemon()
+fetchPokemon();
+
+$( document ).ready(function() {
+    $(".dropdown-trigger").dropdown({ hover: false });
+});
 
