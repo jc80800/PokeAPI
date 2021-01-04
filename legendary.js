@@ -1,8 +1,23 @@
 async function fetchPokemon(){
     for(let i = 1; i < 151; i++){
-        await searchPokemon(i);
+        await searchLegendaryPokemon(i);
     }
 }
+
+async function searchLegendaryPokemon(id) {
+    const BASE_URL = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+    await fetch(BASE_URL)
+        .then(res => res.json())
+        .then(data => checkType(data, id))
+        .catch(error => console.log("Error"));
+}
+
+async function checkType(data, id){
+    if(data.is_legendary){
+        await searchPokemon(id);
+    } else {console.log("Not legendary")}
+}
+
 
 function createCard(data, id){
     const col = document.createElement('div');
